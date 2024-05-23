@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typelighterjs/typelighter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
-    <title>PRecipe Generator</title>
+    <title>Recipe Generator</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>Welcome to my AI Generator</h1>
+        <h1>AI Recipe Generator</h1>
       </header>
       <main>
         <form id="recipe-generator-form">
@@ -21,6 +22,7 @@
             required
             autocomplete="off"
             class="instructions"
+            id="user-instructions"
           />
           <input type="submit" class="submit-button" />
         </form>
