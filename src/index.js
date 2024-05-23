@@ -2,7 +2,7 @@ function generateRecipe(event) {
   event.preventDefault();
 
   new Typewriter("#recipe", {
-    strings: "The recipe will go here",
+    strings: "The recipe goes here",
     autoStart: true,
     delay: 1,
     cursor: "",
