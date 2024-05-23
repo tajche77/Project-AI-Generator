@@ -1,4 +1,5 @@
 function displayRecipe(response) {
+  console.log("recipe generated");
   new Typewriter("#recipe", {
     strings: response.data.answer,
     autoStart: true,
@@ -15,8 +16,11 @@ function generateRecipe(event) {
   let prompt = `User instructions: Generate a dessert recipe with ${instructionsElement.value}`;
   let context =
     "You are a master pastry chef, expert in easy to make desserts. Your mission is to generate a short recipe in basic HTML and separate each line with a <br />. Make sure to follow the user instructions. Sign the recipe with 'SheCodes AI' inside a <strong> element at the end of the recipe and NOT at the beginning";
-  let apiUrl =
-    "https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}";
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  console.log("generating a recipe");
+  console.log(`Prompt: ${promot}`);
+  console.log(`Contrext: ${context}`);
 
   let recipeElement = document.querySelector("#recipe");
   recipeElement.classList.remove("hidden");
@@ -25,5 +29,5 @@ function generateRecipe(event) {
   axios.get(apiUrl).then(displayRecipe);
 }
 
-let recipeFormElement = document.querySelector("recipe-generator-form");
+let recipeFormElement = document.querySelector("#recipe-generator-form");
 recipeFormElement.addEventListener("submit", generateRecipe);
